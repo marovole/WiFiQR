@@ -25,15 +25,16 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           {...props}
         />
         <div className={`
-          w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 
-          rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white 
+          w-10 h-6 bg-gray-200 rounded-full
+          peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900/10
+          peer peer-checked:after:translate-x-4 peer-checked:after:border-white 
           after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white 
-          after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all 
-          peer-checked:bg-blue-600 ${className}
+          after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm
+          peer-checked:bg-gray-900 transition-colors duration-200 ${className}
         `}></div>
       </div>
       {label && (
-        <label htmlFor={checkboxId} className="ml-3 text-sm font-medium text-gray-900 cursor-pointer select-none">
+        <label htmlFor={checkboxId} className="ml-3 text-sm text-gray-600 cursor-pointer select-none">
           {label}
         </label>
       )}

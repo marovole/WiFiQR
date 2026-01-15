@@ -7,7 +7,7 @@ interface QRPreviewProps {
   size?: number;
 }
 
-export function QRPreview({ data, size = 256 }: QRPreviewProps) {
+export function QRPreview({ data, size = 200 }: QRPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const qrContainerRef = useRef<HTMLDivElement>(null);
   const [isReady, setIsReady] = useState(false);
@@ -64,7 +64,7 @@ export function QRPreview({ data, size = 256 }: QRPreviewProps) {
   return (
     <div className="flex flex-col items-center" ref={containerRef}>
       <div
-        className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 flex items-center justify-center"
+        className="bg-white rounded-2xl p-4 flex items-center justify-center border border-gray-100"
         style={{ width: size + 32, height: size + 32 }}
         role="img"
         aria-label={data ? "WiFi QR code - scan to connect to network" : "QR code preview placeholder"}

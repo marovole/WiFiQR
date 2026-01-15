@@ -23,16 +23,10 @@ export const Input: React.FC<InputProps> = ({
   const isPassword = type === 'password';
   const currentType = isPassword ? (showPassword ? 'text' : 'password') : type;
 
-  const inputClasses = `
-    input
-    ${error ? 'input-error' : ''}
-    ${className}
-  `.trim();
-
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor={inputId} className="block text-sm font-medium text-gray-600 mb-2">
           {label}
         </label>
       )}
@@ -40,14 +34,22 @@ export const Input: React.FC<InputProps> = ({
         <input
           id={inputId}
           type={currentType}
-          className={inputClasses}
+          className={`
+            w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm
+            outline-none transition-all duration-200
+            hover:border-gray-300 hover:bg-white
+            focus:bg-white focus:border-gray-900 focus:ring-2 focus:ring-gray-900/5
+            placeholder:text-gray-400
+            ${error ? 'border-red-400 focus:border-red-500 focus:ring-red-500/10' : ''}
+            ${className}
+          `.trim()}
           {...props}
         />
         {isPassword && (
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 transition-colors"
           >
             {showPassword ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -62,7 +64,7 @@ export const Input: React.FC<InputProps> = ({
           </button>
         )}
       </div>
-      {error && <p className="mt-1.5 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
     </div>
   );
 };
