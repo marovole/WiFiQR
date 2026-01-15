@@ -17,21 +17,46 @@ export const metadata: Metadata = {
   description: 'Generate a free WiFi QR code instantly. No signup required. Download PNG, SVG or print a WiFi sign for your home, cafe, Airbnb, or office.',
   keywords: ['create wifi qr code', 'wifi qr code generator', 'generate wifi qr code', 'free wifi qr code', 'printable wifi qr code'],
   authors: [{ name: 'WiFi QR Generator' }],
+  metadataBase: new URL('https://wifi-qr-code.online'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Create WiFi QR Code Generator',
     description: 'Free WiFi QR code generator. Download or print instantly.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'WiFi QR Generator',
+    siteName: 'WiFi QR Code Generator',
+    url: 'https://wifi-qr-code.online',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'WiFi QR Code Generator - Create Free WiFi QR Codes',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Create WiFi QR Code Generator',
     description: 'Free WiFi QR code generator. Download or print instantly.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here after setup
+    // google: 'your-google-verification-code',
   },
 };
 
@@ -56,9 +81,9 @@ export default function RootLayout({
               <span className="font-bold text-xl tracking-tight text-gray-900">WiFi QR</span>
             </div>
             <nav className="hidden sm:flex gap-6">
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">How it works</a>
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Security</a>
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+              <a href="/how-it-works" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">How it works</a>
+              <a href="/scan-wifi-qr-code" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Scan Guide</a>
+              <a href="/printable" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Templates</a>
             </nav>
           </div>
         </header>
@@ -71,11 +96,11 @@ export default function RootLayout({
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-500">
-                © 2024 WiFi QR Generator. All rights reserved.
+                © 2025 WiFi QR Code Generator. All rights reserved.
               </p>
               <div className="flex gap-6">
-                <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Privacy Policy</a>
-                <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Terms of Service</a>
+                <a href="/privacy" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Privacy Policy</a>
+                <a href="/terms" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>

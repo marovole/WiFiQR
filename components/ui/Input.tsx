@@ -19,14 +19,20 @@ export const Input: React.FC<InputProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const generatedId = useId();
   const inputId = id || props.name || generatedId;
-  
+
   const isPassword = type === 'password';
   const currentType = isPassword ? (showPassword ? 'text' : 'password') : type;
+
+  const inputClasses = `
+    input
+    ${error ? 'input-error' : ''}
+    ${className}
+  `.trim();
 
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 mb-1.5">
           {label}
         </label>
       )}
@@ -34,19 +40,14 @@ export const Input: React.FC<InputProps> = ({
         <input
           id={inputId}
           type={currentType}
-          className={`
-            block w-full rounded-lg border px-3 py-2 shadow-sm outline-none transition-colors
-            focus:border-blue-500 focus:ring-1 focus:ring-blue-500
-            ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'}
-            ${className}
-          `}
+          className={inputClasses}
           {...props}
         />
         {isPassword && (
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition-colors"
           >
             {showPassword ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -61,7 +62,7 @@ export const Input: React.FC<InputProps> = ({
           </button>
         )}
       </div>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-1.5 text-sm text-red-600">{error}</p>}
     </div>
   );
 };

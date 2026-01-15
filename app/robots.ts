@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://wifiqr.app/sitemap.xml',
+    sitemap: 'https://wifi-qr-code.online/sitemap.xml',
   };
 }

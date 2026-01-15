@@ -1,0 +1,88 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="white" opacity="0.05"/>
+  <circle cx="1100" cy="530" r="300" fill="white" opacity="0.05"/>
+  <circle cx="900" cy="50" r="150" fill="white" opacity="0.03"/>
+  
+  <!-- Main card -->
+  <rect x="80" y="120" width="500" height="390" rx="24" fill="url(#cardGradient)" opacity="0.95"/>
+  
+  <!-- QR Code placeholder -->
+  <rect x="130" y="170" width="180" height="180" rx="12" fill="#f1f5f9"/>
+  <rect x="145" y="185" width="150" height="150" fill="white"/>
+  
+  <!-- QR pattern simulation -->
+  <g fill="#1e40af">
+    <rect x="155" y="195" width="30" height="30"/>
+    <rect x="195" y="195" width="10" height="10"/>
+    <rect x="215" y="195" width="10" height="10"/>
+    <rect x="235" y="195" width="10" height="10"/>
+    <rect x="255" y="195" width="30" height="30"/>
+    
+    <rect x="155" y="225" width="10" height="10"/>
+    <rect x="175" y="225" width="10" height="10"/>
+    <rect x="215" y="225" width="10" height="10"/>
+    <rect x="275" y="225" width="10" height="10"/>
+    
+    <rect x="155" y="245" width="30" height="30"/>
+    <rect x="195" y="245" width="10" height="10"/>
+    <rect x="225" y="245" width="10" height="10"/>
+    <rect x="255" y="245" width="30" height="30"/>
+    
+    <rect x="155" y="285" width="10" height="10"/>
+    <rect x="175" y="285" width="10" height="10"/>
+    <rect x="195" y="285" width="10" height="10"/>
+    <rect x="235" y="285" width="10" height="10"/>
+    <rect x="255" y="285" width="10" height="10"/>
+    
+    <rect x="155" y="305" width="30" height="30"/>
+    <rect x="205" y="305" width="10" height="10"/>
+    <rect x="225" y="305" width="10" height="10"/>
+  </g>
+  
+  <!-- WiFi icon -->
+  <g transform="translate(360, 180)">
+    <circle cx="50" cy="50" r="50" fill="#1e40af"/>
+    <g stroke="white" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M50 70 L50 70" stroke-width="8"/>
+      <path d="M35 60 Q50 45 65 60"/>
+      <path d="M25 50 Q50 30 75 50"/>
+      <path d="M15 40 Q50 15 85 40"/>
+    </g>
+  </g>
+  
+  <!-- Text on card -->
+  <text x="130" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1e293b">WiFi QR Code</text>
+  <text x="130" y="435" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1e293b">Generator</text>
+  <text x="130" y="475" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#64748b">Free • No Signup • Instant</text>
+  
+  <!-- Right side content -->
+  <text x="650" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="white">Create WiFi</text>
+  <text x="650" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="white">QR Codes</text>
+  <text x="650" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#bfdbfe">Instantly</text>
+  
+  <!-- Features -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="white">
+    <text x="650" y="400">✓ Download PNG & SVG</text>
+    <text x="650" y="435">✓ Print-ready templates</text>
+    <text x="650" y="470">✓ 100% Free, No signup</text>
+    <text x="650" y="505">✓ Works on all devices</text>
+  </g>
+  
+  <!-- Domain -->
+  <text x="650" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#bfdbfe">wifi-qr-code.online</text>
+</svg>
