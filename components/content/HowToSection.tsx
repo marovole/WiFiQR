@@ -18,30 +18,38 @@ const steps = [
 
 export function HowToSection() {
   return (
-    <section className="py-16 border-t border-gray-200">
-      <div className="text-center mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-          How to Create a WiFi QR Code
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Generate your WiFi QR code in three simple steps
-        </p>
-      </div>
+    <section className="py-20 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            How to Create a WiFi QR Code
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Generate your WiFi QR code in three simple steps
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {steps.map((step) => (
-          <div key={step.number} className="text-center">
-            <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-              {step.number}
+        <div className="grid md:grid-cols-3 gap-8">
+          {steps.map((step) => (
+            <div 
+              key={step.number}
+              className="relative group"
+            >
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-xl flex items-center justify-center text-xl font-bold shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                {step.number}
+              </div>
+              
+              <div className="pt-8 p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              {step.title}
-            </h3>
-            <p className="text-gray-600">
-              {step.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

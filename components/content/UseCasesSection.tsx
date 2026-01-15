@@ -48,29 +48,41 @@ const useCases = [
 
 export function UseCasesSection() {
   return (
-    <section className="py-16 border-t border-gray-200">
-      <div className="text-center mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-          WiFi QR Codes for Every Space
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Perfect for homes, businesses, and public spaces
-        </p>
-      </div>
+    <section className="py-20 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            WiFi QR Codes for Every Space
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Perfect for homes, businesses, and public spaces
+          </p>
+        </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        {useCases.map((useCase) => (
-          <div
-            key={useCase.title}
-            className="bg-white rounded-xl border border-gray-200 p-6 text-center hover:shadow-md transition-shadow"
-          >
-            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-              {useCase.icon}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {useCases.map((useCase) => (
+            <div
+              key={useCase.title}
+              className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm
+                       hover:shadow-xl hover:border-indigo-100
+                       transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-indigo-50 to-purple-50 
+                            text-indigo-600 rounded-2xl flex items-center justify-center mb-5
+                            group-hover:from-indigo-500 group-hover:to-purple-600
+                            group-hover:text-white transition-all duration-300">
+                {useCase.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 
+                           group-hover:text-indigo-600 transition-colors">
+                {useCase.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {useCase.description}
+              </p>
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">{useCase.title}</h3>
-            <p className="text-sm text-gray-600">{useCase.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

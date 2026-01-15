@@ -45,29 +45,32 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Free WiFi QR Code Generator
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Create a QR code for your WiFi network. Guests can scan it to connect instantly.
             No signup required. 100% free.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-6">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="card p-8">
+              <h2 className="text-xl font-semibold text-gray-900 mb-6">
                 WiFi Details
               </h2>
               <WifiForm onChange={handleConfigChange} />
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 w-full">
-                <h2 className="text-lg font-semibold text-gray-900 mb-6 text-center">
+              <div className="card p-8 w-full">
+                <h2 className="text-xl font-semibold text-gray-900 mb-6 text-center">
                   Your QR Code
                 </h2>
                 
-                <div className="flex justify-center mb-6">
-                  <QRPreview data={qrData} size={220} />
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+                  <div className="relative flex justify-center mb-6">
+                    <QRPreview data={qrData} size={240} />
+                  </div>
                 </div>
 
                 {!wifiConfig.ssid && (
