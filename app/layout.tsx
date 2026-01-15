@@ -93,7 +93,7 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 py-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-400">
-                © 2025 WiFi QR Code Generator
+                © 2026 WiFi QR Code Generator
               </p>
               <div className="flex gap-6">
                 <a href="/privacy" className="text-sm text-gray-400 hover:text-gray-900 transition-colors duration-200">Privacy</a>
